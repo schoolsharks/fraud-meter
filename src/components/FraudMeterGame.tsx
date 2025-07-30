@@ -250,7 +250,7 @@ const FraudMeterGame: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden text-white p-8">
+    <div className="min-h-screen bg-[#0D0D0D] relative overflow-hidden text-white p-8">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
@@ -263,7 +263,7 @@ const FraudMeterGame: React.FC = () => {
         <div className="flex justify-between items-center mb-8">
           <Link 
             to="/" 
-            className="group p-3 rounded-2xl bg-black backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300 flex items-center space-x-2"
+            className="group p-3 rounded-2xl bg-[#0D0D0D] backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300 flex items-center space-x-2"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-200" />
             <span>Back to Home</span>

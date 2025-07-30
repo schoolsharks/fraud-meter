@@ -86,7 +86,7 @@ const GamePage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-[#0D0D0D] relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
@@ -95,11 +95,11 @@ const GamePage: React.FC = () => {
       </div>
 
       {/* Fixed Header with Meter */}
-      <div className="z-10 sticky top-0 bg-black backdrop-blur-sm border-b border-gray-800/50 px-4 py-2">
+      <div className="z-10 sticky top-0 bg-[#0D0D0D] backdrop-blur-sm border-b border-gray-800/50 px-4 py-2">
         <div className="flex items-center justify-between mb-2">
           <Link 
             to="/" 
-            className="group p-2 rounded-2xl bg-black backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300"
+            className="group p-2 rounded-2xl bg-[#0D0D0D] backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200" />
           </Link>
@@ -160,7 +160,7 @@ const GamePage: React.FC = () => {
                 Game Completed!
               </h2>
               
-              <div className="bg-black backdrop-blur-sm rounded-3xl p-6 border border-gray-800/50 space-y-4">
+              <div className="bg-[#0D0D0D] backdrop-blur-sm rounded-3xl p-6 border border-gray-800/50 space-y-4">
                 <div className="text-xl text-white">
                   Final Fraud Level: <span className={`font-bold ${gameState.fraudLevel > 70 ? 'text-white' : gameState.fraudLevel > 40 ? 'text-gray-300' : 'text-gray-400'}`}>
                     {gameState.fraudLevel}%
