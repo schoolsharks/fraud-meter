@@ -132,7 +132,7 @@ export const gameTexts: TextItem[] = [
       "What she received was a one-page invoice and a vague explanation about a 'digital connection' with the supplier, who just happened to be based in a high-risk country.",
     clickable: true,
     isFraud: true,
-    percentage:10
+    percentage:40
   },
   {
     id: 20,
@@ -201,7 +201,7 @@ export const gameTexts: TextItem[] = [
       "'We like to pay extra to avoid hassle,' Aryan joked. 'Premium peace of mind.'",
     clickable: true,
     isFraud: true,
-    percentage:18
+    percentage:60
   },
   {
     id: 30,
@@ -284,7 +284,6 @@ export const gameTexts: TextItem[] = [
     content: "And unrelated third-party remittances",
     clickable: false,
     isFraud: false,
-    percentage:24
   },
   {
     id: 43,
