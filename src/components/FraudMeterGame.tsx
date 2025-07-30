@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { ArrowLeft } from 'lucide-react'
 import FraudMeter from './FraudMeter'
 import TextGameArea from './TextGameArea'
 
@@ -249,21 +250,26 @@ const FraudMeterGame: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-black relative overflow-hidden text-white p-8">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <Link 
             to="/" 
-            className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+            className="group p-3 rounded-2xl bg-black backdrop-blur-sm border border-gray-800/50 text-gray-300 hover:text-white hover:border-gray-700/50 transition-all duration-300 flex items-center space-x-2"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-200" />
             <span>Back to Home</span>
           </Link>
           <div className="text-right">
-            <div className="text-2xl font-bold text-green-400">Score: {gameState.score}</div>
+            <div className="text-2xl font-bold text-white">Score: {gameState.score}</div>
             <div className="text-sm text-gray-400">
               Clickable items: {selectedTexts.length}/{GAME_TEXTS.filter(t => t.clickable).length}
             </div>
@@ -299,10 +305,10 @@ const FraudMeterGame: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
-                    className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 py-4 rounded-lg font-semibold text-lg shadow-2xl z-50 ${
+                    className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 py-4 rounded-2xl font-semibold text-lg shadow-2xl z-50 backdrop-blur-sm border ${
                       showFeedback.correct 
-                        ? 'bg-green-600 text-white' 
-                        : 'bg-red-600 text-white'
+                        ? 'bg-gray-800/80 text-white border-gray-600/50' 
+                        : 'bg-gray-800/80 text-gray-300 border-gray-600/50'
                     }`}
                   >
                     {showFeedback.message}
@@ -317,19 +323,19 @@ const FraudMeterGame: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center space-y-8"
             >
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
                 Game Completed!
               </h2>
               <div className="space-y-4">
-                <div className="text-2xl">
-                  Final Score: <span className="text-green-400 font-bold">{gameState.score}</span>
+                <div className="text-2xl text-white">
+                  Final Score: <span className="font-bold">{gameState.score}</span>
                 </div>
-                <div className="text-xl">
-                  Fraud Level: <span className={`font-bold ${gameState.fraudLevel > 70 ? 'text-red-400' : gameState.fraudLevel > 40 ? 'text-yellow-400' : 'text-green-400'}`}>
+                <div className="text-xl text-white">
+                  Fraud Level: <span className={`font-bold ${gameState.fraudLevel > 70 ? 'text-white' : gameState.fraudLevel > 40 ? 'text-gray-300' : 'text-gray-400'}`}>
                     {gameState.fraudLevel}%
                   </span>
                 </div>
-                <div className="text-lg text-gray-300">
+                <div className="text-lg text-gray-400">
                   {gameState.fraudLevel > 70 
                     ? "High fraud alert! You caught most of the fraudulent statements." 
                     : gameState.fraudLevel > 40 
@@ -339,15 +345,17 @@ const FraudMeterGame: React.FC = () => {
                 </div>
               </div>
               <div className="space-x-4">
-                <button
+                <motion.button
                   onClick={resetGame}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                  className="px-6 py-3 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 text-white rounded-2xl font-semibold border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Play Again
-                </button>
+                </motion.button>
                 <Link
                   to="/"
-                  className="inline-block px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition-all duration-300"
+                  className="inline-block px-6 py-3 bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 text-gray-300 rounded-2xl font-semibold border border-gray-700/50 hover:border-gray-600/50 hover:text-white transition-all duration-300"
                 >
                   Home
                 </Link>
