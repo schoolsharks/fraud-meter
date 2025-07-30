@@ -1,279 +1,316 @@
 export interface TextItem {
-  id: number
-  content: string
-  clickable: boolean
-  isFraud: boolean
+  id: number;
+  content: string;
+  clickable: boolean;
+  isFraud: boolean;
+  percentage?: number;
 }
 
 export const gameTexts: TextItem[] = [
   {
     id: 1,
-    content: "Welcome to our comprehensive guide on digital security and fraud prevention.",
+    content: "Let me tell you a story about Ritika.",
     clickable: false,
-    isFraud: false
+    isFraud: false,
   },
   {
     id: 2,
-    content: "In today's interconnected world, it's essential to understand the various threats that exist online.",
+    content:
+      "She was the kind of relationship manager every bank wanted on their team — sharp, observant, and someone who rarely took anything at face value.",
     clickable: false,
-    isFraud: false
+    isFraud: false,
   },
   {
     id: 3,
-    content: "Recently, I received an email from a Nigerian prince who needs my help transferring $10 million dollars to the United States.",
-    clickable: true,
-    isFraud: true
+    content:
+      "At MetroBank, she'd seen her fair share of quirky clients: the ones who sent voice notes instead of emails, the ones who panicked over passbooks, even a guy who wanted his current account to come with 'festive cashback.'",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 4,
-    content: "This type of scam, known as advance fee fraud, has been around for decades and continues to target unsuspecting individuals.",
-    clickable: true,
-    isFraud: false
+    content: "But Apex Exports? They were something else.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 5,
-    content: "The perpetrators often pose as wealthy individuals, government officials, or lottery organizations.",
-    clickable: true,
-    isFraud: false
+    content:
+      "When they first came on board, they looked clean. A modest business trading in mobile accessories.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 6,
-    content: "Another common tactic involves urgent messages claiming that your bank account has been compromised and requesting immediate verification of your login credentials.",
-    clickable: true,
-    isFraud: true
+    content:
+      "Nothing extravagant. Just a few small payments here and there. Ritika onboarded them without a second thought.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 7,
-    content: "Legitimate banks and financial institutions will never ask for sensitive information via email or text messages.",
-    clickable: true,
-    isFraud: false
+    content: "Then, one morning, her phone buzzed.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 8,
-    content: "They have secure channels for communication and verification processes.",
+    content:
+      "'Hey Ritika! Quick update — we've shuffled our directors and changed the authorized signatories. Fresh faces, fresh thinking, you know?' said Aryan Mehta, the young founder, with the kind of cheer that usually came with good coffee or great sales.",
     clickable: false,
-    isFraud: false
+    isFraud: false,
   },
   {
     id: 9,
-    content: "Yesterday, while browsing social media, I saw an advertisement promising a free iPhone 15 Pro Max with just one click - no strings attached!",
-    clickable: true,
-    isFraud: true
+    content: "He didn't stop there.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 10,
-    content: "These 'free' offers are rarely genuine and often lead to data harvesting or subscription traps.",
-    clickable: true,
-    isFraud: false
+    content:
+      "'Also, we'd like to get started on a few trade transactions. Big ones, actually.'",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 11,
-    content: "When something seems too good to be true, it usually is.",
+    content:
+      "A sudden leadership change followed by a request for large trade deals?",
     clickable: true,
-    isFraud: false
+    isFraud: false,
   },
   {
     id: 12,
-    content: "Phishing emails have become increasingly sophisticated, mimicking the design and language of legitimate companies.",
-    clickable: true,
-    isFraud: false
+    content:
+      "Unusual, yes. But companies evolve. She noted it but didn't jump to conclusions.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 13,
-    content: "They often create a sense of urgency to pressure recipients into quick action.",
-    clickable: true,
-    isFraud: false
+    content:
+      "A few days later, Aryan was back — this time with a request for advance payment.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 14,
-    content: "I was told that my PayPal account would be suspended immediately unless I verify my information by clicking on a provided link.",
-    clickable: true,
-    isFraud: true
+    content:
+      "'We're importing used luxury cars from Europe. Exciting times!' he beamed.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 15,
-    content: "Always verify such claims by logging into your account directly through the official website rather than clicking links in emails.",
-    clickable: true,
-    isFraud: false
+    content: "'Accessories today, Audis tomorrow!'",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 16,
-    content: "Check the sender's email address carefully for any irregularities.",
-    clickable: true,
-    isFraud: false
+    content: "He was clearly pleased with the punchline. Ritika wasn't.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 17,
-    content: "Lottery scams are another prevalent form of fraud.",
-    clickable: false,
-    isFraud: false
+    content: "Mobile accessories to used cars?",
+    clickable: true,
+    isFraud: false,
   },
   {
     id: 18,
-    content: "Victims are informed they've won a substantial prize in a lottery they never entered.",
-    clickable: true,
-    isFraud: false
+    content:
+      "A sharp pivot, but not unheard of. Businesses do diversify — sometimes rapidly. Still, she asked for trade contracts and supplier details.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 19,
-    content: "Congratulations! You've won $50,000 in the International Email Lottery! Simply pay a processing fee of $500 to claim your winnings.",
+    content:
+      "What she received was a one-page invoice and a vague explanation about a 'digital connection' with the supplier, who just happened to be based in a high-risk country.",
     clickable: true,
-    isFraud: true
+    isFraud: true,
+    percentage:10
   },
   {
     id: 20,
-    content: "Legitimate lotteries do not require upfront payments to claim winnings.",
-    clickable: true,
-    isFraud: false
+    content:
+      "That was the first time Ritika hesitated. Something didn't sit right.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 21,
-    content: "This is a clear red flag that should alert anyone to the fraudulent nature of such communications.",
-    clickable: true,
-    isFraud: false
+    content: "She didn't process the payment.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 22,
-    content: "Online shopping scams have also increased significantly, especially on social media platforms and fake e-commerce websites.",
-    clickable: true,
-    isFraud: false
+    content: "Then, the transaction patterns changed.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 23,
-    content: "Scammers create professional-looking sites to steal payment information.",
+    content:
+      "Apex Exports started moving money through multiple bank accounts across different branches. The amounts were structured and small — never quite large enough to raise automatic alerts.",
     clickable: true,
-    isFraud: false
+    isFraud: true,
+    percentage:30
   },
   {
     id: 24,
-    content: "Romance scams target individuals seeking companionship online.",
-    clickable: true,
-    isFraud: false
+    content: "When she asked, Aryan brushed it off.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 25,
-    content: "Scammers create fake profiles and build emotional relationships before requesting money for emergencies or travel expenses.",
+    content:
+      "'Oh, our CA suggested it. Keeps things cleaner, apparently. And they're all our accounts!'",
     clickable: true,
-    isFraud: false
+    isFraud: true,
+    percentage:23
   },
   {
     id: 26,
-    content: "My grandmother fell victim to a phone scam where someone claimed to be her grandson in jail, needing bail money urgently.",
+    content: "Again, not completely off. But now there was a pattern forming.",
     clickable: true,
-    isFraud: true
+    isFraud: false,
   },
   {
     id: 27,
-    content: "These emergency scams prey on people's emotions and desire to help loved ones.",
-    clickable: true,
-    isFraud: false
+    content: "Next came the invoices. Ritika took a closer look —",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 28,
-    content: "Always verify such claims by contacting the person directly through known phone numbers.",
+    content:
+      "they listed basic goods at abnormally high prices. Cleaning cloths. Spare cables. All priced like premium imports.",
     clickable: true,
-    isFraud: false
+    isFraud: true,
+    percentage:19
   },
   {
     id: 29,
-    content: "Technology support scams involve cold calls claiming there are issues with your computer or software that need immediate attention.",
+    content:
+      "'We like to pay extra to avoid hassle,' Aryan joked. 'Premium peace of mind.'",
     clickable: true,
-    isFraud: false
+    isFraud: true,
+    percentage:18
   },
   {
     id: 30,
-    content: "The caller often requests remote access to your device.",
-    clickable: true,
-    isFraud: false
+    content: "She smiled politely. But inside, her instincts flared.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 31,
-    content: "A representative from Microsoft called me saying my computer was infected with viruses and offered to fix it remotely for a fee.",
-    clickable: true,
-    isFraud: true
+    content: "And then — the final piece.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 32,
-    content: "Microsoft and other major tech companies do not make unsolicited calls about computer problems.",
+    content:
+      "Ritika spotted several inward payments from unrelated third parties, with no supporting documents.",
     clickable: true,
-    isFraud: false
+    isFraud: true,
+    percentage:15
   },
   {
     id: 33,
-    content: "Such calls are always scams designed to gain access to your system or steal money.",
+    content:
+      "'Oh, just old business friends helping us out. Global trade runs on trust!' Aryan explained, grinning.",
     clickable: true,
-    isFraud: false
+    isFraud: true,
+    percentage:20
   },
   {
     id: 34,
-    content: "Investment scams promise unrealistic returns with little to no risk.",
-    clickable: true,
-    isFraud: false
+    content: "That did it.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 35,
-    content: "They often use terms like 'guaranteed profits' or 'exclusive opportunities' to attract victims.",
-    clickable: true,
-    isFraud: false
+    content: "One or two oddities? Maybe. But this many?",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 36,
-    content: "I was offered an exclusive cryptocurrency investment opportunity with guaranteed 300% returns within 30 days by a financial advisor I met online.",
-    clickable: true,
-    isFraud: true
+    content: "Ritika sat back and reviewed the full picture:",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 37,
-    content: "Remember that all investments carry risk, and legitimate investment opportunities are properly regulated and do not guarantee unrealistic returns.",
-    clickable: true,
-    isFraud: false
+    content: "A sudden change in leadership",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 38,
-    content: "Social engineering attacks manipulate people into divulging confidential information.",
-    clickable: true,
-    isFraud: false
+    content: "A shift in business activity that made little strategic sense",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 39,
-    content: "These attacks rely on human psychology rather than technical vulnerabilities.",
-    clickable: true,
-    isFraud: false
+    content: "Vague trade documentation",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 40,
-    content: "Education and awareness are the best defenses against fraud.",
+    content: "Structured payments across multiple accounts",
     clickable: false,
-    isFraud: false
+    isFraud: false,
   },
   {
     id: 41,
-    content: "Stay informed about new scam tactics, trust your instincts, and always verify suspicious communications through official channels.",
-    clickable: true,
-    isFraud: false
+    content: "Over-invoiced goods",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 42,
-    content: "The local police department called asking for a donation to support officers' families, requesting immediate payment via gift cards.",
-    clickable: true,
-    isFraud: true
+    content: "And unrelated third-party remittances",
+    clickable: false,
+    isFraud: false,
+    percentage:24
   },
   {
     id: 43,
-    content: "Legitimate charities and organizations do not request payments through gift cards or wire transfers.",
-    clickable: true,
-    isFraud: false
+    content:
+      "Individually, they could be explained away. Together? They told a different story.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 44,
-    content: "These payment methods are preferred by scammers because they're difficult to trace and reverse.",
-    clickable: true,
-    isFraud: false
+    content:
+      "Ritika flagged the account and submitted a detailed report to the Compliance team.",
+    clickable: false,
+    isFraud: false,
   },
   {
     id: 45,
-    content: "By being vigilant and informed, you can protect yourself and others from falling victim to these increasingly sophisticated fraud schemes.",
-    clickable: true,
-    isFraud: false
-  }
-]
+    content:
+      "A week later, the findings came in: a likely case of trade-based money laundering, potentially part of a broader network using small, clean-looking businesses as a front.",
+    clickable: false,
+    isFraud: false,
+  },
+  {
+    id: 46,
+    content: "Her gut had been right. Again.",
+    clickable: false,
+    isFraud: false,
+  },
+];

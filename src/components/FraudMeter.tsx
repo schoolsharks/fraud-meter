@@ -254,10 +254,10 @@ const FraudMeter: React.FC<FraudMeterProps> = ({ fraudLevel }) => {
         </div>
 
         {/* Labels */}
-        <div className="absolute bottom-0 left-0 text-green-400 text-xs md:text-sm font-semibold">
+        <div className="absolute bottom-0 -left-4 text-green-400 text-xs md:text-sm font-semibold">
           SAFE
         </div>
-        <div className="absolute bottom-0 right-0 text-red-400 text-xs md:text-sm font-semibold">
+        <div className="absolute bottom-0 -right-10 text-red-400 text-xs md:text-sm font-semibold">
           FRAUD
         </div>
       </div>
