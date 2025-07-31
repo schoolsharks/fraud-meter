@@ -24,7 +24,7 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
 
     if (isSelected) {
       return text.isFraud
-        ? "bg-gray-800/60 text-white   px-2 py-1"
+        ? "bg-[#96FF43]/10 text-white   px-2 py-1"
         : "bg-gray-800/40 text-gray-300 border border-gray-700/60  px-2 py-1";
     }
 
@@ -33,7 +33,7 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
 
   return (
     <div className="h-full">
-      <h3 className="text-lg font-semibold mb-4 text-center text-gray-300 px-2">
+      <h3 className="text-sm font-semibold mb-4 text-gray-300 px-2">
         Read the text and spot the fraud. Tap on anything that
         doesn’t feel right.
       </h3>
@@ -58,7 +58,7 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
                     ${text.clickable ? "py-1" : ""}
                     ${
                       selectedTexts.includes(text.id) && text.isFraud
-                        ? "bg-red-500/10"
+                        ? "bg-[#96FF43]"
                         : ""
                     }
                   `}
@@ -103,7 +103,7 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
           <div className="text-xs md:text-sm text-gray-500 space-y-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-white"></span>
+                <span className="w-2 h-2 bg-[#96FF43]"></span>
                 <span>Fraud detected ⚠️</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -111,7 +111,7 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
                 <span>Wrong guess ❌</span>
               </div>
             </div>
-            <div className="text-center text-gray-600">
+            <div className="text-gray-600 mt-4">
               Tap sentences with subtle borders to select them
             </div>
           </div>

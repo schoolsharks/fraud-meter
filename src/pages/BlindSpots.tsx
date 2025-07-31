@@ -65,9 +65,9 @@ const BlindSpots = () => {
         </motion.button>
       </div>
 
-      <p className="text-gray-300 text-center mb-8 max-w-2xl mx-auto">
-        These are common scenarios that people often miss when detecting fraud.
-        See how you compare with others!
+      <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+        Many people miss these signs of fraud. Let’s see how you did
+        compared to others.
       </p>
 
       <div className="flex flex-col gap-6 max-w-4xl mx-auto">
@@ -120,10 +120,16 @@ const BlindSpots = () => {
         </p>
       </div>
       <button
-        onClick={handleShare}
-        className="p-2 text-xl font-medium cursor-pointer mt-4 w-full bg-[#96FF43] text-black"
+        onClick={() => navigate("/game")}
+        className="w-full px-6 py-3 bg-[#252525] mt-4 backdrop-blur-sm text-white font-semibold "
       >
-        Share
+        Play Again
+      </button>
+      <button
+        onClick={handleShare}
+        className="p-2 text-xl font-medium cursor-pointer mt-2 w-full bg-[#96FF43] text-black"
+      >
+        Invite Friends
       </button>
     </div>
   );

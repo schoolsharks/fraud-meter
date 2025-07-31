@@ -74,14 +74,6 @@ const GamePage: React.FC = () => {
     }
   };
 
-  const resetGame = () => {
-    setGameState({
-      fraudLevel: 50,
-      gameCompleted: false,
-      selectedTexts: [],
-    });
-    setShowFeedback({ show: false, correct: false, message: "" });
-  };
 
   const getFinalMessage = (fraudLevel: number) => {
     if (fraudLevel > 80)
@@ -94,13 +86,7 @@ const GamePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0D0D0D] relative overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-      </div>
+    <div className="min-h-screen flex flex-col bg-[#0D0D0D] relative overflow-hidden">
 
       {/* Fixed Header with Meter */}
       <div className="z-10 sticky top-0 bg-[#0D0D0D] backdrop-blur-sm border-b border-gray-800/50 px-4 py-2">
@@ -124,7 +110,7 @@ const GamePage: React.FC = () => {
       </div>
 
       {/* Game Content */}
-      <div className="relative z-10 flex-1">
+      <div className="relative z-10 flex flex-col flex-1">
         <AnimatePresence mode="wait">
           {!gameState.gameCompleted ? (
             <motion.div
@@ -159,12 +145,12 @@ const GamePage: React.FC = () => {
           ) : (
             <motion.div
               key="game-over"
-              className="px-4 py-8 text-center space-y-6"
+              className="px-4 py-8 space-y-6 flex flex-col flex-1"
             >
-              <h2 className="text-3xl font-bold text-white">Game Completed!</h2>
+              <h2 className="text-3xl font-bold text-white text-center">Game Completed!</h2>
 
               <div className="bg-[#0D0D0D] backdrop-blur-sm  p-6 border border-gray-800/50 space-y-4">
-                <div className="text-xl text-white">
+                <div className="text-xl text-white text-center">
                   Final Fraud Level:{" "}
                   <span
                     className={`font-bold ${
@@ -183,15 +169,7 @@ const GamePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-3">
-                <motion.button
-                  onClick={resetGame}
-                  className="w-full px-6 py-3 bg-[#252525] backdrop-blur-sm text-white font-semibold "
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Play Again
-                </motion.button>
+              <div className="space-y-3 mt-auto">
                 <motion.button
                   onClick={() => navigate("/blind-spots")}
                   className="w-full px-6 py-3 bg-[#96FF43] backdrop-blur-sm text-black font-semibold "
