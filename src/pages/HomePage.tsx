@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
           Fraud Meter
         </h1>
         <p className="text-lg md:text-xl text-gray-300">
-          Test your ability to detect fraudulent statements. Click on suspicious sentences to move the fraud meter!
+          Find the fraud. Tap what doesn’t feel right
         </p>
         <Link 
           to="/game"

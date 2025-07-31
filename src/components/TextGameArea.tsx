@@ -6,17 +6,15 @@ interface TextGameAreaProps {
   texts: TextItem[];
   selectedTexts: number[];
   onTextClick: (textId: number, isFraud: boolean) => void;
-  onFinish:()=>void;
+  onFinish: () => void;
 }
 
 const TextGameArea: React.FC<TextGameAreaProps> = ({
   texts,
   selectedTexts,
   onTextClick,
-  onFinish
+  onFinish,
 }) => {
-
-
   const getTextStyle = (text: TextItem) => {
     const isSelected = selectedTexts.includes(text.id);
 
@@ -36,12 +34,13 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
   return (
     <div className="h-full">
       <h3 className="text-lg font-semibold mb-4 text-center text-gray-300 px-2">
-        Read the text and tap on suspicious statements
+        Read the text and spot the fraud. Tap on anything that
+        doesn’t feel right.
       </h3>
 
       {/* Scrollable Text Container */}
       <div className="bg-[#252525] backdrop-blur-sm shadow-xl mx-2">
-        <div className="h-[calc(100vh-280px)] overflow-y-auto p-4 md:p-6">
+        <div className={`overflow-y-auto p-4 md:p-6`} style={{maxHeight:`${window.innerHeight - 360}px`}}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -57,7 +56,11 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
                   className={`
                     ${getTextStyle(text)}
                     ${text.clickable ? "py-1" : ""}
-                    ${selectedTexts.includes(text.id) && text.isFraud ?"bg-red-500/10" : ""}
+                    ${
+                      selectedTexts.includes(text.id) && text.isFraud
+                        ? "bg-red-500/10"
+                        : ""
+                    }
                   `}
                   onClick={() => {
                     if (text.clickable && !selectedTexts.includes(text.id)) {
@@ -117,7 +120,8 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
       <div className="px-2">
         <button
           onClick={onFinish}
-         className="p-2 text-xl font-medium cursor-pointer mt-4 w-full bg-[#96FF43] text-black">
+          className="p-2 text-xl font-medium cursor-pointer mt-4 w-full bg-[#96FF43] text-black"
+        >
           Finish
         </button>
       </div>
