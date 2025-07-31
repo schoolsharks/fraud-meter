@@ -19,13 +19,13 @@ const TextGameArea: React.FC<TextGameAreaProps> = ({
     const isSelected = selectedTexts.includes(text.id);
 
     if (!text.clickable) {
-      return "text-gray-400";
+      return "text-gray-400 text-left";
     }
 
     if (isSelected) {
       return text.isFraud
-        ? "bg-[#96FF43]/10 text-white   px-2 py-1"
-        : "bg-gray-800/40 text-gray-300 border border-gray-700/60  px-2 py-1";
+        ? "bg-[#96FF43]/10 text-white text-left px-2 py-1"
+        : "bg-gray-800/40 text-gray-300 text-left border border-gray-700/60  px-2 py-1";
     }
 
     return "text-gray-300 hover:text-white hover:bg-gray-800/30 cursor-pointer border border-gray-700/30 hover:border-gray-600/60  px-2 py-1 transition-all duration-200";
